@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="w-full h-screen p-10 bg-white ">
+        <h1 class="text-2xl text-center">BMI Calculator</h1>
+        <div class="flex items-center justify-center mt-10">
+            <div class="box w-[320px] h-[370px] bg-blue-400 rounded-2xl p-5 flex flex-col">
+                <h4 class=" text-xl text-white ">Your Distance in km</h4>
+                <input type="number" class="required dis mb-3 w-full h-10 rounded-lg  p-3 border-2 border-blue-600 cursor-pointer mt-5">
+
+                <h4 class=" text-xl text-white ">Your time in hour</h4>
+                <input type="number" class="required time mb-3 w-full h-10 rounded-lg  p-3 border-2 border-blue-600 cursor-pointer mt-5">
+
+                <button class="bg-zinc-200 px-3 py-2 mt-3 rounded-lg hover:bg-zinc-300 ">Calculate</button>
+                <h5 class="text-2xl text-white mt-4 text-center ">You're speed is: <span class="speed"></span> km/h</h5>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        
+        let dis = document.querySelector(".dis");
+        let time = document.querySelector(".time");
+
+        let button = document.querySelector("button");
+        let speed = document.querySelector(".speed");
+
+        button.addEventListener("click" , function(){
+            
+            let sp = Math.round(dis.value / time.value) ;
+            speed.textContent = sp;
+
+        });
+        
+       
+
+
+    </script>
+
+</body>
+</html>

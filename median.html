@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Median Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="w-full h-screen p-10 bg-white ">
+        <h1 class="text-2xl text-center">Median Calculator</h1>
+        <div class="flex items-center justify-center mt-10">
+            <div class="box w-[320px] h-[280px] bg-blue-400 rounded-2xl p-5 flex flex-col">
+
+                <h4 class="text-xl text-white">Enter Numbers (comma-separated)</h4>
+                <input type="text" class="num mb-5 w-full h-15 rounded-lg p-3 border-2 border-blue-600 cursor-pointer mt-5">
+
+                <button class="bg-white px-3 py-2 mt-3 rounded-lg hover:bg-zinc-300">Calculate Median</button>
+                <h5 class="text-2xl text-white mt-4 text-center">Median is: <span class="median"></span></h5>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+       
+       let input = document.querySelector(".num");
+        let button = document.querySelector("button");
+        let medSpan = document.querySelector(".median");
+
+        button.addEventListener("click", function() {
+            let inputVal = input.value;
+            let arr = inputVal.split(",").map(Number).filter(num => !isNaN(num));
+
+            arr.sort((a, b) => a - b);
+
+            let length = arr.length;
+            let mid = Math.floor(length / 2);
+            let median;
+
+            if (length % 2 === 0) {
+                median = (arr[mid] + arr[mid - 1]) / 2;
+            } else {
+                median = arr[mid];
+            }
+
+            medSpan.textContent = median;
+        });
+        
+    </script>
+
+</body>
+</html>

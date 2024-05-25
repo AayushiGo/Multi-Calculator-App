@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific; Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="w-full h-screen p-10 bg-white ">
+        <h1 class="text-2xl text-center">Scientific Calulator</h1>
+        <div class="flex items-center justify-center mt-10">
+            <div class="box w-[320px] h-[520px] bg-blue-400 rounded-2xl p-5">
+                <input type="text" class="display w-full h-15 rounded-lg font-bold text-right p-3 border-2 border-blue-600" readonly>
+                <div class="grid gap-2 grid-cols-4 font-bold mt-4">
+
+                    <button class=" button p-4 bg-red-500 border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">C</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md ">±</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md ">%</button>
+                    <button class=" button p-4 bg-green-500 text-white border-2 border-blue-600 shadow hover:bg-green-600 rounded-md " value="/">/</button>
+
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md ">7</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md " >8</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md ">9</button>
+                    <button class=" button p-4 bg-green-500 text-white border-2 border-blue-600 shadow hover:bg-green-600 rounded-md " >x</button>
+
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md" >4</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md " >5</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md ">6</button>
+                    <button class=" button p-4 bg-green-500 text-white border-2 border-blue-600 shadow hover:bg-green-600 rounded-md " value="-">-</button>
+
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md" >1</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md " >2</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md ">3</button>
+                    <button class=" button p-4 bg-green-500 text-white border-2 border-blue-600 shadow hover:bg-green-600 rounded-md " value="-">+</button>
+                    
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md" >0</button>
+                    <button class=" button p-4 bg-white border-2 border-blue-600 shadow hover:bg-zinc-200 rounded-md " >.</button>
+                    <button class=" button px-6 bg-yellow-500 text-white border-2 border-blue-600 shadow hover:bg-yellow-600 rounded-md ">=</button>
+
+                    <button class=" button p-4 bg-green-500 text-white border-2 border-blue-600 shadow hover:bg-green-600 rounded-md ">^</button>
+                    <button class=" button p-2 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">sin</button>
+                    <button class=" button px-2  bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">cos</button>
+                    <button class=" button px-2 py-1 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">tan</button>
+                    <button class=" button px-2 py-1 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">log</button>
+                    <button class=" button px-2 py-1 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">ln</button>
+                    <button class=" button px-2 py-1 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">sqrt</button>
+                    <button class=" button px-2 py-1 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">x^2</button>
+                    <button class=" button px-2 py-1 bg-red-500 text-white border-2 border-blue-600 shadow hover:bg-red-600 rounded-md ">x^y</button>
+                    
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script >
+        let display = document.querySelector(".display");
+let buttons = document.querySelectorAll(".button");
+
+buttons.forEach(button => {
+    button.addEventListener("click", function() {
+        let value = button.innerText;
+        if (value === "C") {
+            display.value = "";
+        } else if (value === "=") {
+            display.value = eval(display.value);
+        } else {
+            display.value += value;
+        }
+    });
+});
+    </script>
+
+</body>
+</html>
