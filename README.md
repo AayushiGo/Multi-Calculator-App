@@ -6,7 +6,12 @@ A versatile multi-calculator app built using HTML, CSS, and JavaScript. This app
 
 - **Basic Arithmetic Calculator**: Perform basic operations like addition, subtraction, multiplication, and division.
 - **Scientific Calculator**: Includes advanced functions like trigonometry, logarithms, and exponentiation.
-- **Unit Converter**: Convert between different units of measurement.
+- **Bmi Calculator**: Calculates Body Mass Index.
+- **Speed Calculator**: Calculates speed given time and distance.
+- **Age Calculator** Calculates age.
+- **Mean Calculator** Calculates mean of given value.
+- **Median Calculator** Calculates median of given value.
+- **Simple Interest Calculator** Calculates simple interest.
 - **Responsive Design**: Optimized for use on both desktop and mobile devices.
 
 ## Technologies Used
